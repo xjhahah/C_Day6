@@ -87,17 +87,43 @@
 //}
 //  
 
-//输出一个整数的每一位。
+//3.输出一个整数的每一位。
+//int main()
+//{
+//	int num= 0;
+//	int i = 1;
+//	printf("请输入你要查询的数：");
+//	scanf_s("%d", &num);
+//	while (i <= 32)
+//	{
+//		printf("%d ", (num >> i) & 1);
+//		i++;
+//	}
+//	return 0;
+//}
+
+//4.
+//两个int（32位）整数m和n的二进制表达中，有多少个位(bit)不同？
+//输入例子 :
+//1999 2299
+//输出例子 : 7
+
 int main()
 {
-	int num= 0;
-	int i = 1;
+	int num1, num2;
 	printf("请输入你要查询的数：");
-	scanf_s("%d", &num);
+	scanf_s("%d %d", &num1, &num2);
+
+	int i = 1;
+	int count = 0;
 	while (i <= 32)
 	{
-		printf("%d ", (num >> i) & 1);
-		i++;
+		if (((num1 >> i) & 1) != ((num2 >> i) & 1))
+		{
+			count++;
+		}
+		i++; 
 	}
+	printf("这两个数中共有 %d 个比特位不同。\n",count);
 	return 0;
 }
