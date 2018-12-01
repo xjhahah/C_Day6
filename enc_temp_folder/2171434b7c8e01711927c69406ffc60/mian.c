@@ -32,14 +32,14 @@
 void Test2(int n)
 {
 	printf("奇数位值为：");
-	for (int i = 30; i >= 0; i -= 2)
+	for (int i = 0; i <= 30; i += 2)
 	{
 		printf("%d ", (n >> i) & 1);
 	}
 	printf("\n");
 
 	printf("偶数位值为：");
-	for (int i = 31; i >= 0; i -= 2)
+	for (int i = 0; i <= 31; i += 2)
 	{
 		printf("%d ",(n>>i)&1);
 	}
@@ -49,7 +49,7 @@ void Test2(int n)
 int main()
 {
 	size_t n = 0;
-	printf("请输入你要查询的数：");
+ 	printf("请输入你要查询的数：");
 	scanf_s("%d", &n);
 	//printf("该数中比特位有 %d 个是 1\n",count_one_bits(n));
 

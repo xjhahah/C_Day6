@@ -32,14 +32,14 @@
 void Test2(int n)
 {
 	printf("奇数位值为：");
-	for (int i = 30; i >= 0; i -= 2)
+	for (int i = 0; i <= 30; i += 2)
 	{
 		printf("%d ", (n >> i) & 1);
 	}
 	printf("\n");
 
 	printf("偶数位值为：");
-	for (int i = 31; i >= 0; i -= 2)
+	for (int i = 0; i <= 31; i += 2)
 	{
 		printf("%d ",(n>>i)&1);
 	}
