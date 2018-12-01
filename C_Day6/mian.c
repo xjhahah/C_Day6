@@ -41,7 +41,7 @@ void Test2(int n)
 	printf("偶数位值为：");
 	for (int i = 31; i >= 0; i -= 2)
 	{
-		printf("%d ",(n>>i)&1);
+		printf("%d ",(n >> i)&1);
 	}
 	printf("\n");
 }
@@ -54,6 +54,35 @@ int main()
 	//printf("该数中比特位有 %d 个是 1\n",count_one_bits(n));
 
 	Test2(n);
+
+	//法二
+	int i = 0, j = 0;
+	char arr1[16];  //定义2个数组来存放二进制序列
+	char arr2[16];
+	int num = 0;
+	printf("请输入你要查询的数：");
+	scanf_s("%d", &num);
+	for (i = 0; i < 32; i += 2)
+	{
+		arr1[j] = ((num >> i) & 1);  //奇数位
+		j++;
+	}
+	for (i = 1, j = 0; i < 32; i += 2)
+	{
+		arr2[j] = ((num >> i) & 1);  //偶数位
+		j++;
+	}
+	printf("奇数位为：");  //输出数组里的二进制奇数序列
+	for (i = 0; i <= 15; i++)
+	{
+		printf("%d ", arr1[i]);
+	}
+	printf("\n");
+	printf("偶数位为：");  //输出数组里的二进制偶数序列
+	for (i = 0; i <= 15; i++)
+	{ 
+		printf("%d ", arr2[i]);
+	}
 	return 0;
 }
   
